@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  </head>
+  <body>
+    <h1> Hello {{ user.username }}!!</h1>
+    <h2>{{ user.username }}</h2>
+    {% if user.is_superuser %}
+
+      <a href="{% url 'admin:index' %}"><h2>Clik here if you want to go the admin view.</h2></a>
+    {% endif %}
+    <br>
+
+    <a href="{% url 'logout' %}">Logout</a>
+    <div class="container">
+      <div class="row">
+        <h1>hello</h1>
+      </div>
+      </div>
+      <div class="container">
+        <div class="row">
+        {% for producttype in producttypes %}
+        <div class="col-4">
+          <h3>{{ producttype.name }} </h3>
+
+          <form   action="{% url 'product_choose' %}"method="post">
+            {% csrf_token %}
+            <select  name="product">
+              {% for product in products %}
+                  {% if producttype.id == product.productType.id%}
+                    <option value="{{ product.id }}">{{ product.name }}</option>
+                  {% endif %}
+              {% endfor %}
+            </select>
+            <input type="submit" value="Product">
+          </form>
+
+        </div>
+        {% endfor %}
+        </div>
+      </div>
+      
+      <!--   here is -->
+      
+
+      
+      
+
+  </body>
+</html>
