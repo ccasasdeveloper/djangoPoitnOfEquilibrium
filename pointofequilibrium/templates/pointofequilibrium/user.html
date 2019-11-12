@@ -15,39 +15,41 @@
     <br>
 
     <a href="{% url 'logout' %}">Logout</a>
-    <div class="container">
-      <div class="row">
-        <h1>hello</h1>
-      </div>
-      </div>
-      <div class="container">
-        <div class="row">
-        {% for producttype in producttypes %}
-        <div class="col-4">
-          <h3>{{ producttype.name }} </h3>
-
-          <form   action="{% url 'product_choose' %}"method="post">
-            {% csrf_token %}
-            <select  name="product">
-              {% for product in products %}
-                  {% if producttype.id == product.productType.id%}
-                    <option value="{{ product.id }}">{{ product.name }}</option>
-                  {% endif %}
-              {% endfor %}
-            </select>
-            <input type="submit" value="Product">
-          </form>
-
-        </div>
-        {% endfor %}
-        </div>
-      </div>
+  
       
       <!--   here is -->
       
+      <uL>
+        {% for producttype in producttypes %}
 
+            <li>
+                <h3>{{ producttype.name  }}</h3>
+            </li>
+            <ul>
+            {% for product in products %}
+                  {% if producttype.id == product.productType.id%}
+                  <li>
+                    <a href="{% url 'product_choose' product.id user.id %}">{{ product.name }}</a>
+                  </li>
+                  {% endif %}
+              {% endfor %}
+            </ul>
+        {% endfor %}
+    </ul>
       
-      
+    <!--<div class="container-fluid">
+      ::before
+        <article class="main-body-wrapper">
+          <h1 class="index-page--title">Grupos de productos bancarios</h1>
+          <p class="index-page--subtitle">En <strong>punto de equilibrio</strong></p>
+          <section class="type--products--wrapper">
+              <a class="type--container type--container--link" href="{% url 'admin:index' %}"></a>
+
+          </section>
+
+        </article>
+    </div>-->
+
 
   </body>
 </html>

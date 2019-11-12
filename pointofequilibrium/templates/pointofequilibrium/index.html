@@ -4,6 +4,19 @@
     index
 {% endblock %}
 
-{% body block %}
+{% block body %}
+<h1> Hello {{ user.username }}!!</h1>
+    <h2>{{ user.username }}</h2>
+    {% if user.is_superuser %}
 
+      <a href="{% url 'admin:index' %}"><h2>Clik here if you want to go the admin view.</h2></a>
+    {% endif %}
+    <br>
+    <a href="{% url 'logout' %}">Logout</a>
+    {% for producttype in producttypes %}
+
+            <li>
+                <h3>{{ producttype.name  }}</h3>
+            </li>
+    {% endfor %}
 {% endblock %}

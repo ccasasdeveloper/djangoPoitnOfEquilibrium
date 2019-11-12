@@ -81,7 +81,7 @@ WSGI_APPLICATION = 'djangoPuntoDeEquilibrio.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'djangopuntodeequilibrio',
+        'NAME': 'djangopuntodeequilibrio_20191111',
         'USER':'postgres',
         'PASSWORD':'123456',
         'HOST':'localhost',
