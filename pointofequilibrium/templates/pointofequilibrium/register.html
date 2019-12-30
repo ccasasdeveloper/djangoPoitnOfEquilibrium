@@ -1,40 +1,111 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
-  <head>
-    <meta charset="utf-8">
-    <title>Register</title>
-  </head>
-  <body>
-    <div class="login">
-
-         {% if messages %}
-            <ul>
-                {% for message in messages %}
-                <li>{{ message }}</li>
-                {% endfor %}
-            </ul>
-        {% endif %}
-
-        <h1>Register - Point of equilibrium</h1>
-
+  <!DOCTYPE html>
+<html lang="en">
+<head>
+<title>puntodeequilibrio</title>
+<!-- for-mobile-apps -->
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="keywords" content="Client Responsive web template, Bootstrap Web Templates, Flat Web Templates, Android Compatible web template, 
+Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, SonyEricsson, Motorola web design" />
+	
+	<!-- css files -->
+    <link href="css/bootstrap.css" rel='stylesheet' type='text/css' /><!-- bootstrap css -->
+    <link href="css/style.css" rel='stylesheet' type='text/css' /><!-- custom css -->
+	<link href="css/css_slider.css" type="text/css" rel="stylesheet" media="all">
+    <link href="css/font-awesome.min.css" rel="stylesheet"><!-- fontawesome css -->
+	<!-- //css files -->
+	
+	<!-- google fonts -->
+	<link href="//fonts.googleapis.com/css?family=Montserrat:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
+	<link href="//fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i,800,800i" rel="stylesheet">
+	<!-- //google fonts -->
+    {% load static %}
+    <link rel="stylesheet" type="text/css" href="{% static 'pointofequilibrium/bootstrap.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'pointofequilibrium/css_slider.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'pointofequilibrium/font-awesome.min.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'pointofequilibrium/style.css' %}">
+    <link rel="stylesheet" type="text/eot" href="{% static 'pointofequilibrium/fonts/fontawesome-webfont.eot' %}">
+    <link rel="stylesheet" type="text/svg" href="{% static 'pointofequilibrium/fonts/fontawesome-webfont.svg' %}">
+    <link rel="stylesheet" type="text/ttf" href="{% static 'pointofequilibrium/fonts/fontawesome-webfont.ttf' %}">
+    <link rel="stylesheet" type="text/otf" href="{% static 'pointofequilibrium/fonts/FontAwesome.otf' %}">
     
+</head>
+  <body>
+      <header>
+          <div class="top-head container">
+            <div class="ml-auto text-right right-p">
+              <ul>
+                
+              </ul>
+            </div>
+          </div>
+          <div class="container">
+            <!-- nav -->
+            <nav class="py-3 d-lg-flex">
+              <div id="logo">
+                <h1> <a href="index.html"><span class="fa fa-free-code-camp"></span> Menu </a></h1>
+              </div>
+              <label for="drop" class="toggle"><span class="fa fa-bars"></span></label>
+              <input type="checkbox" id="drop" />
+              <ul class="menu ml-auto mt-1">
+                <li class=""><a href="{% url 'index' %}">Inicio</a></li>
+                
+              </ul>
+            </nav>
+            <!-- //nav -->
+          </div>
+        </header>
+      <div class="banner" id="home">
+          <div class="layer">
+            <div class="container">
+              <div class="row">
+                <div class="col-md-6 banner-text-w3ls">
+                  <!-- banner slider-->
+        
+                        <div class="container-fluid">
+                          <div class="w3ls_banner_txt">
+                            <h3 class="b-w3ltxt  mt-md-4">Punto de equilibrio</h3>
+                          </div>
+                        </div>
+                
+                  <!-- //banner slider-->
+                </div>
+                <div class="col-md-6 px-lg-3 px-0">
+                  <div class="banner-form-w3 ml-lg-5">
+                    <div class="padding">
+                        <form class="form-signin" action="{% url 'register' %}" method="post">
+                            {% csrf_token %}
+                            <div class="form-label-group">
+                                <input type="text" id="inputUsername" class="form-control" placeholder="Enter Username" name="username"required autofocus >
+                                <label for="inputUsername">Username</label>
+                              </div>
+                              <div class="form-label-group">
+                                  <input type="text" id="inputEmail" class="form-control" placeholder="Enter Email" name="email"required autofocus >
+                                  <label for="inputUsername">Email</label>
+                                </div>
+                
+                              <div class="form-label-group">
+                                <input type="password" id="inputPassword" class="form-control" placeholder="Enter Password" name="password1"required>
+                                <label for="inputPassword">Password</label>
+                              </div>
+                              <input type="password" id="inputPassword" class="form-control" placeholder="Enter Password other time" name="password2"required>
+                              <label for="inputPassword">Password</label>
+                             </div>
+                
+                              <button class="btn btn-lg btn-primary btn-block text-uppercase" type="submit" value="login">Submit</button>
+                              <hr class="my-4">  
 
-
-
-
-
-
-         <form method="post" action="{% url 'register' %}" >
-             {% csrf_token %}
-             <table>
-                {{ form.as_table }}
-                 <tr>
-                    <td></td>
-                    <td><input type="submit" name="submit" value="Register" /></td>
-                </tr>
-             </table>
-         </form>
-         <a href="{% url 'index' %}">login</a>
-     </div>
+              
+                          </form>
+                    </div>
+                  </div>
+                        </div>
+                        
+              </div>
+            </div>
+          </div>
+        
   </body>
 </html>

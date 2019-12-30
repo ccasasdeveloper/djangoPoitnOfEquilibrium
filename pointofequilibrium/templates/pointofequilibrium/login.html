@@ -1,51 +1,337 @@
-
+<!--
+author: W3layouts
+author URL: http://w3layouts.com
+License: Creative Commons Attribution 3.0 Unported
+License URL: http://creativecommons.org/licenses/by/3.0/
+-->
 <!DOCTYPE html>
-<html lang="en" dir="ltr">
-  <head>
-    <meta charset="utf-8">
+<html lang="en">
+<head>
+<title>puntodeequilibrio</title>
+<!-- for-mobile-apps -->
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="keywords" content="Client Responsive web template, Bootstrap Web Templates, Flat Web Templates, Android Compatible web template, 
+Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, SonyEricsson, Motorola web design" />
+	
+	<!-- css files -->
+    <link href="css/bootstrap.css" rel='stylesheet' type='text/css' /><!-- bootstrap css -->
+    <link href="css/style.css" rel='stylesheet' type='text/css' /><!-- custom css -->
+	<link href="css/css_slider.css" type="text/css" rel="stylesheet" media="all">
+    <link href="css/font-awesome.min.css" rel="stylesheet"><!-- fontawesome css -->
+	<!-- //css files -->
+	
+	<!-- google fonts -->
+	<link href="//fonts.googleapis.com/css?family=Montserrat:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
+	<link href="//fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i,800,800i" rel="stylesheet">
+	<!-- //google fonts -->
     {% load static %}
-    <title>Login</title>
-    <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css"/>
-    <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
-    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-    <link rel="stylesheet" href="{% static 'pointofequilibrium/styles.css' %}"/>
-  </head>
-  <body>
-    <h1>login</h1>
+    <link rel="stylesheet" type="text/css" href="{% static 'pointofequilibrium/bootstrap.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'pointofequilibrium/css_slider.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'pointofequilibrium/font-awesome.min.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'pointofequilibrium/style.css' %}">
+    <link rel="stylesheet" type="text/eot" href="{% static 'pointofequilibrium/fonts/fontawesome-webfont.eot' %}">
+    <link rel="stylesheet" type="text/svg" href="{% static 'pointofequilibrium/fonts/fontawesome-webfont.svg' %}">
+    <link rel="stylesheet" type="text/ttf" href="{% static 'pointofequilibrium/fonts/fontawesome-webfont.ttf' %}">
+    <link rel="stylesheet" type="text/otf" href="{% static 'pointofequilibrium/fonts/FontAwesome.otf' %}">
+	<style>
+		
+		
+	</style>
+</head>
+<body>
 
-    <a href="{% url 'register' %}">Register</a>
-    <div class="container">
-    <div class="row">
-      <div class="col-sm-9 col-md-7 col-lg-5 mx-auto">
-        <div class="card card-signin my-5">
-          <div class="card-body">
-            <h5 class="card-title text-center">Login</h5>
-            <form class="form-signin" action="{% url 'login' %}" method="post">
-              {% csrf_token %}
-              <div class="form-label-group">
-                <input type="text" id="inputUsername" class="form-control" placeholder="Enter Username" name="username"required autofocus >
-                <label for="inputUsername">Username</label>
-              </div>
+<!-- header -->
+<header>
+	<div class="top-head container">
+		<div class="ml-auto text-right right-p">
+			<ul>
+				
+			</ul>
+		</div>
+	</div>
+	<div class="container">
+		<!-- nav -->
+		<nav class="py-3 d-lg-flex">
+			<div id="logo">
+				{% load static %}
+                <img src="{% static "images/ultimologo.png" %}" width="200" height="50">
+			</div>
+			<label for="drop" class="toggle"><span class="fa fa-bars"></span></label>
+			<input type="checkbox" id="drop" />
+			<ul class="menu ml-auto mt-1">
+				
+				<li class=""><a href="#about">Que somos</a></li>
+				<li class=""><a href="#services">Educate</a></li>
+				<li class=""><a href="{% url 'register' %}">Registrate</a></li>
+				
+			</ul>
+		</nav>
+		<!-- //nav -->
+	</div>
+	<style>
 
-              <div class="form-label-group">
-                <input type="password" id="inputPassword" class="form-control" placeholder="Enter Password" name="password"required>
-                <label for="inputPassword">Password</label>
-              </div>
+	</style>
+</header>
+<!-- //header -->
 
-              <div class="custom-control custom-checkbox mb-3">
-                <input type="checkbox" class="custom-control-input" id="customCheck1">
-                <label class="custom-control-label" for="customCheck1">Remember password</label>
-              </div>
-              <button class="btn btn-lg btn-primary btn-block text-uppercase" type="submit" value="login">Submit</button>
-              <hr class="my-4">
+<!-- banner -->
+<div class="banner" id="home">
+	<div class="layer">
+		<div class="container">
+			<div class="row">
+				<div class="col-md-6 banner-text-w3ls">
+					<!-- banner slider-->
 
+								<div class="container-fluid">
+									<div class="w3ls_banner_txt">
+										<h3 class="b-w3ltxt  mt-md-4">Punto de equilibrio</h3>
+										
+									</div>
+								</div>
+				
+					<!-- //banner slider-->
+				</div>
+				<div class="col-md-6 px-lg-3 px-0" >
+					<div class="banner-form-w3 ml-lg-5" >
+						<div class="padding" id="form">
+							<!--no tocar-->
+							<form class="form-signin" action="{% url 'login' %}" method="post">
+                                {% csrf_token %}
+                                <div class="form-label-group">
+                                  <input type="text" id="inputUsername" class="form-control" placeholder="Enter Username" name="username"required autofocus >
+                                  <label for="inputUsername">Username</label>
+                                </div>
+                  
+                                <div class="form-label-group">
+                                  <input type="password" id="inputPassword" class="form-control" placeholder="Enter Password" name="password"required>
+                                  <label for="inputPassword">Password</label>
+                                </div>
+                  
+                                <div class="custom-control custom-checkbox mb-3">
+                                  <input type="checkbox" class="custom-control-input" id="customCheck1">
+                                  <label class="custom-control-label" for="customCheck1">Remember password</label>
+                                </div>
+                                <button class="btn btn-lg btn-primary btn-block text-uppercase" type="submit" value="login">Submit</button>
+                                <hr class="my-4">
+                  
+                  
+                              </form>
+						</div>
+					</div>
+                </div>
+                
+			</div>
+		</div>
+	</div>
+</div>
+<!-- //banner -->
+  <!-- banner-bottom -->
+    <section class="some-content py-5" id="about">
+        <div class="container py-md-5">
+            <div class="row about-vv-top mt-2">
+                <div class="col-lg-6 about-info">
+                    <h4 class="title-hny  mb-md-5"></h4>
+                    <p>Con punto de equilibrio usted tendra una herramienta eficaz y certera para hacer sus proyecciones financieras, en base 
+                    a productos bancarios del mercado colombiano.</p>
+                   
 
-            </form>
-          </div>
+                </div>
+                <div class="col-lg-6 about-img mt-md-4 mt-sm-4">
+                    <img src="images/monedas.jpeg" class="img-fluid" alt="">
+                </div>
+
+            </div>
         </div>
-      </div>
+    </section>
+    <!-- //banner-bottom-->
+	<!-- services -->
+<section class="services py-5" id="services">
+	<div class="container py-md-5">
+	<h3 class="heading text-center mb-3 mb-sm-5">Productos</h3>
+		<div class="row service-grid-grids text-center">
+			<div class="col-lg-4 col-md-6 service-grid service-grid1 mb-4">
+				<div class="service-icon">
+					<span class="fa fa-h-square"></span>
+				</div>
+				<h4 class="mt-3">ahorro</h4>
+				<p class="mt-3">ahorro para jovenes
+			.</p>
+			</div>
+			<div class="col-lg-4 col-md-6 service-grid service-grid2 mb-4">
+				<div class="service-icon">
+					<span class="fa fa-glide-g"></span>
+				</div>
+				<h4 class="mt-3">credito</h4>
+				<p class="mt-3">credito vivienda.</p>
+			</div>
+			
+			<div class="col-lg-4 col-md-6 service-grid service-grid3 mb-4">
+				<div class="service-icon">
+					<span class="fa fa-fighter-jet"></span>
+				</div>
+				<h4 class="mt-3">inversion</h4>
+				<p class="mt-3">libre inversion.</p>
+			</div>
+		</div>
+			
+	</div>		
+</section>
+<!-- //services -->
+ <!-- stats -->
+	
+    <!-- //stats -->
+<!-- Team  -->
+<section class="team py-5" id="team">
+    <div class="container py-md-5">
+		<h3 class="heading text-center mb-3 mb-sm-5">Equipo de desarrollo</h3>
+        <div class="row">
+			<div class="team-grid col-lg-3 col-sm-6 mb-5">
+				<img src="images/t1.jpg" class="" alt="" />
+				<div class="team-info text-center">
+					<h3 class="e">Tyson Amery</h3>
+					<span class="">Manager</span>
+				</div>
+			</div>
+			<div class="team-grid col-lg-3 col-sm-6  mb-5">
+				<img src="images/t2.jpg" class="" alt="" />
+				<div class="team-info text-center">
+					<h3 class="">Stas Melnik</h3>
+					<span class="">director</span>
+				</div>
+			</div>
+			<div class="team-grid col-lg-3 col-sm-6  mb-5">
+				<img src="images/t3.jpg" class="" alt="" />
+				<div class="team-info text-center">
+					<h3 class="">Lise Laurie</h3>
+					<span class="">Instructor</span>
+				</div>
+			</div>
+			<div class="team-grid col-lg-3 col-sm-6  mb-5">
+				<img src="images/t4.jpg" class="" alt="" />
+				<div class="team-info text-center">
+					<h3 class="">Effie Eleanora</h3>
+					<span class="">manager</span>
+				</div>
+			</div>
+        </div>
     </div>
-  </div>
+</section>
+<!-- //Team -->
 
-  </body>
+ <!-- Gallery -->
+   
+    <!--// gallery -->
+	
+<!-- destinations -->
+
+<!-- destinations -->
+ <!--/testimonials -->
+    <section class="testimonials py-5" id="testimonials">
+        <div class="container py-md-5">
+                <h3 class="heading heading1 text-center mb-3 mb-sm-5"> Prioridades</h3>
+            <div class="row">
+                <div class="col-lg-4 col-sm-6 test-info text-left mb-4">
+                    <p><span class="fa fa-quote-left"></span> darle un mejor conocimiento a las personas de que es y 
+                    	para que sirve un producto . <span class="fa fa-quote-right"></span></p>
+                    <div class="test-img text-right mb-3">
+                        <img src="images/te1.jpg" class="img-fluid" alt="user-image">
+                    </div>
+                    <h3 class="my-md-2 my-3 text-right">Jenifer Burns</h3>
+
+                   
+                </div>
+                <div class="col-lg-4 col-sm-6 test-info text-left mb-4">
+                    <p><span class="fa fa-quote-left"></span> darle proyecciones acertadas de pagos y valores de intereses reales. <span class="fa fa-quote-right"></span></p>
+
+                    <div class="test-img text-right mb-3">
+                        <img src="images/te2.jpg" class="img-fluid" alt="user-image">
+                    </div>
+                    <h3 class="my-md-2 my-3 text-right"> Abraham Smith</h3>
+
+                   
+                </div>
+                <div class="col-lg-4 col-sm-6 test-info text-left gap1 mb-4">
+                    <p><span class="fa fa-quote-left"></span>que las personas tengan mas confianza a las 
+                    	entidades bancarias. <span class="fa fa-quote-right"></span></p>
+                    <div class="test-img text-right mb-3">
+                        <img src="images/te3.jpg" class="img-fluid" alt="user-image">
+                    </div>
+                    <h3 class="my-md-2 my-3 text-right">Jenifer Burns</h3>
+
+                </div>
+            </div>
+        </div>
+    </section>
+    <!--//testimonials -->
+<!-- Contact -->
+<section class="contact py-5" id="contact">
+	<div class="container py-md-5">
+			  <h3 class="heading text-center mb-3 mb-sm-5">Informacion</h3>
+			<ul class="list-unstyled row text-center mt-lg-5 mt-4 px-lg-5">
+                <li class="col-md-4 col-sm-6 adress-w3pvt-info mb-4">
+                    <div class=" adress-icon">
+                        <span class="fa fa-map-marker"></span>
+                    </div>
+
+                    <h6>Location</h6>
+                    <p>punto de equilibrio
+                        <br>bogota colombia</p>
+                </li>
+
+                <li class="col-md-4 col-sm-6 adress-w3pvt-info mb-4">
+                    <div class="adress-icon">
+                        <span class="fa fa-envelope-open-o"></span>
+                    </div>
+                    <h6>Phone & Email</h6>
+                    <p>+(122) 123 456 7890</p>
+                    <a href="mailto:info@example.com" class="mail">puntodeequilibrio@gmail.com</a>
+                </li>
+				 <li class="col-md-4 col-sm-6 adress-w3pvt-info mb-4">
+                    <div class="adress-icon">
+                        <span class="fa fa-building"></span>
+                    </div>
+                    <h6>our branches</h6>
+                    <p>bogota</p>
+					 <p></p>
+                   
+                </li>
+            </ul>
+			
+			
+			
+	</div>
+</section>
+<!-- //Contact -->
+   <!-- map -->	
+<div class="map p-2">
+	<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d254508.51641062117!2d-74.24789190683227!3d4.648283717717461!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8e3f9bfd2da6cb29%3A0x239d635520a33914!2zQm9nb3TDoQ!5e0!3m2!1ses!2sco!4v1573174737127!5m2!1ses!2sco" width="600" height="450" frameborder="0" style="border:0;" allowfullscreen=""></iframe>
+</div>
+<!-- //map -->
+
+<!-- //contact us -->
+
+
+ <!-- footer -->
+   
+    <!-- //footer -->
+   <!-- copyright -->
+<div class="copy-right-top">
+	<p class="copy-right text-center py-4">&copy; 2019 Trip Spot. All Rights Reserved | Design by
+		<a href="http://w3layouts.com/"> W3layouts </a>
+	</p>
+</div>
+<!-- //copyright -->	
+	
+<!-- move top -->
+<div class="move-top text-right">
+	<a href="#home" class="move-top"> 
+		<span class="fa fa-angle-up  mb-3" aria-hidden="true"></span>
+	</a>
+</div>
+<!-- move top -->
+
+
+
+</body>
 </html>

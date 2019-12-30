@@ -1,14 +1,118 @@
+
 <!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
+<title>puntodeequilibrio</title>
+<!-- for-mobile-apps -->
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="keywords" content="Client Responsive web template, Bootstrap Web Templates, Flat Web Templates, Android Compatible web template, 
+Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, SonyEricsson, Motorola web design" />
+	
+	<!-- css files -->
+    <link href="css/bootstrap.css" rel='stylesheet' type='text/css' /><!-- bootstrap css -->
+    <link href="css/style.css" rel='stylesheet' type='text/css' /><!-- custom css -->
+	<link href="css/css_slider.css" type="text/css" rel="stylesheet" media="all">
+    <link href="css/font-awesome.min.css" rel="stylesheet"><!-- fontawesome css -->
+	<!-- //css files -->
+	
+	<!-- google fonts -->
+	<link href="//fonts.googleapis.com/css?family=Montserrat:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
+	<link href="//fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i,800,800i" rel="stylesheet">
+	<!-- //google fonts -->
+    {% load static %}
+    <link rel="stylesheet" type="text/css" href="{% static 'pointofequilibrium/bootstrap.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'pointofequilibrium/css_slider.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'pointofequilibrium/font-awesome.min.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'pointofequilibrium/style.css' %}">
+    <link rel="stylesheet" type="text/eot" href="{% static 'pointofequilibrium/fonts/fontawesome-webfont.eot' %}">
+    <link rel="stylesheet" type="text/svg" href="{% static 'pointofequilibrium/fonts/fontawesome-webfont.svg' %}">
+    <link rel="stylesheet" type="text/ttf" href="{% static 'pointofequilibrium/fonts/fontawesome-webfont.ttf' %}">
+    <link rel="stylesheet" type="text/otf" href="{% static 'pointofequilibrium/fonts/FontAwesome.otf' %}">
+    
 </head>
+
 <body>
-    <h1>Hello</h1>
-    <h2>{{ object_projectionType.name }}</h2>
-    <h3>{{ p.amount }}</h3>
+    <header>
+        <div class="container">
+          <!-- nav -->
+          <nav class="py-3 d-lg-flex">
+              <div id="logo">
+                  {% load static %}
+                  <img src="{% static "images/ultimologo.png" %}" width="200" height="50">
+              </div>
+              <label for="drop" class="toggle"><span class="fa fa-bars"></span></label>
+              <input type="checkbox" id="drop" />
+              <ul class="menu ml-auto mt-1">
+                <li class="">Hello {{ object_user.username }}</li>
+                
+                {% if user.is_superuser %}
+                        <li class=""><a href="{% url 'admin:index' %}">admin</a></li>
+                      {% endif %}
+                <li class=""><a href="{% url 'logout' %}">logout</a></li>
+                <li class=""><a href="{% url 'historial' user.id %}">Historial</a></li>
+                
+              </ul>
+            </nav>
+          <!-- //nav -->
+        </div>
+      </header> 
+
+<section>
+
+<br>
+<br>
+<br>
+<br>
+<h2>{{ p.type_of_projection.name }}</h2>
+<h2>{{ p.variableEconomic.duration  }}</h2>
+<div class="container">
+  <div class="row">
+    <div class="col-7">
+<div class="card" style="width: 36rem;">
+    <div class="card-header">
+      Informe acerca de tu proyección.
+    </div>
+    <ul class="list-group list-group-flush">
+      <li class="list-group-item">Monto que quieres solicitar: {{ amount }}</li>
+      <li class="list-group-item">Tasa efectiva anual: {{ p.variableEconomic.value  }}</li>
+      <li class="list-group-item">Tasa efetiva diaria: {{ ted }} </li>
+      <li class="list-group-item">Tasa efectiva mensual: {{ tem }} </li>
+      <li class="list-group-item">Factor valor presente: {{ fvp }} </li>
+      <li class="list-group-item">Meses: {{ months }} </li>
+      <li class="list-group-item">Total consolidado: {{ total }} </li>
+
+    </ul>
+  </div>
+</div>
+<div class="col-5">
+  <table class="table table-bordered table-dark">
+      <thead>
+        <tr>
+          <th scope="col">Cuota</th>
+          
+          <th scope="col">Valor cuota</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for i in row_projection reversed %}
+        <tr>
+        
+          
+          <th scope="row">{{forloop.counter}}</th>
+          
+          <td> {{ cuotaTwo }} </td>
+          
+        </tr>
+        {% endfor %}
+      
+      </tbody>
+  </table>
+  
+</div>
+</div>
+</div>
+</div>
 </body>
-</html>

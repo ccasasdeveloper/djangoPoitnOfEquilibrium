@@ -10,4 +10,6 @@ urlpatterns = [
     path(r'^register/$', views.register, name='register'),
     path("<int:product_id>/<int:user_id>/product_choose",views.product_choose, name='product_choose'),
     path("<int:product_id>/<int:user_id>/form_values_bank", views.form_values_bank, name='form_values_bank'),
+    path("<int:user_id>/historial", views.historial, name='historial'),
+    path("checkNewTemplate", views.checkNewTemplate, name="checkNewTemplate"),
     ]

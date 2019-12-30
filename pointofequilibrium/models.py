@@ -49,11 +49,14 @@ class Duration(models.Model):
 
 
     time_of_duration = models.CharField(max_length=64)
-    limit_lower = models.IntegerField(name="Limite inferior")
-    limit_higher = models.IntegerField(name="limite superior")
+    limit_lower = models.IntegerField(name="Limite_inferior")
+    limit_higher = models.IntegerField(name="limite_superior")
 
     def __str__(self):
         return f"{self.time_of_duration}"
+
+
+
 
 
 class Bank(models.Model):
@@ -83,7 +86,7 @@ class Projection(models.Model):
     variableEconomic = models.ForeignKey(VariableEconomic, on_delete=models.CASCADE, related_name="variableEconomic")
 
     def __str__(self):
-        return f"{self.date_modified}"
+        return f"Tu hiciste un proyecció el {self.date_modified} basada en un {self.type_of_projection.productType.name}"
 
 
 

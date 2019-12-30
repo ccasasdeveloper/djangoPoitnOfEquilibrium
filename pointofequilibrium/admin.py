@@ -22,3 +22,4 @@ admin.site.register(ProductType)
 admin.site.register(ProjectionType)
 admin.site.register(Projection)
 admin.site.register(Duration)
+
